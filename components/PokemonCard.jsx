@@ -1,3 +1,4 @@
+import { FavoriteButton } from '@/components/FavoriteButton';
 import {
   Card,
   CardContent,
@@ -28,7 +29,9 @@ export const PokemonCard = ({ pokemon }) => {
           <CardTitle className="capitalize">{pokemon.name}</CardTitle>
         </CardHeader>
       </Link>
-      <CardFooter>{/* <FavoriteButton pokemon={pokemon} /> */}</CardFooter>
+      <CardFooter>
+        <FavoriteButton pokemon={pokemon} />
+      </CardFooter>
     </Card>
   );
 };

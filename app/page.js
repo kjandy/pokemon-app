@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getPokemon } from '@/lib/pokeapi';
+import { FavoriteCount } from '@/components/FavoriteCount';
 
 export default async function Home() {
   // 'use cache';
@@ -9,6 +10,7 @@ export default async function Home() {
 
   return (
     <main className="p-8">
+      <FavoriteCount />
       <Image
         src={pokemon.sprites.other['official-artwork'].front_default}
         alt={pokemon.name}
