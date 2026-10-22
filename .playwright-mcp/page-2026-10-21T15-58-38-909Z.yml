@@ -1,0 +1,125 @@
+- main [ref=f25e2]:
+  - generic [ref=f25e3]:
+    - heading "ポケモン一覧" [level=1] [ref=f25e4]
+    - paragraph [ref=f25e5]: 30匹のポケモンが見つかりました
+  - generic [ref=f25e6]:
+    - link "bulbasaur bulbasaur" [ref=f25e8] [cursor=pointer]:
+      - /url: /pokemon/bulbasaur
+      - img "bulbasaur" [ref=f25e11]
+      - generic [ref=f25e12]: bulbasaur
+    - link "ivysaur ivysaur" [ref=f25e16] [cursor=pointer]:
+      - /url: /pokemon/ivysaur
+      - img "ivysaur" [ref=f25e19]
+      - generic [ref=f25e20]: ivysaur
+    - link "venusaur venusaur" [ref=f25e24] [cursor=pointer]:
+      - /url: /pokemon/venusaur
+      - img "venusaur" [ref=f25e27]
+      - generic [ref=f25e28]: venusaur
+    - link "charmander charmander" [ref=f25e32] [cursor=pointer]:
+      - /url: /pokemon/charmander
+      - img "charmander" [ref=f25e35]
+      - generic [ref=f25e36]: charmander
+    - link "charmeleon charmeleon" [ref=f25e40] [cursor=pointer]:
+      - /url: /pokemon/charmeleon
+      - img "charmeleon" [ref=f25e43]
+      - generic [ref=f25e44]: charmeleon
+    - link "charizard charizard" [ref=f25e48] [cursor=pointer]:
+      - /url: /pokemon/charizard
+      - img "charizard" [ref=f25e51]
+      - generic [ref=f25e52]: charizard
+    - link "squirtle squirtle" [ref=f25e56] [cursor=pointer]:
+      - /url: /pokemon/squirtle
+      - img "squirtle" [ref=f25e59]
+      - generic [ref=f25e60]: squirtle
+    - link "wartortle wartortle" [ref=f25e64] [cursor=pointer]:
+      - /url: /pokemon/wartortle
+      - img "wartortle" [ref=f25e67]
+      - generic [ref=f25e68]: wartortle
+    - link "blastoise blastoise" [ref=f25e72] [cursor=pointer]:
+      - /url: /pokemon/blastoise
+      - img "blastoise" [ref=f25e75]
+      - generic [ref=f25e76]: blastoise
+    - link "caterpie caterpie" [ref=f25e80] [cursor=pointer]:
+      - /url: /pokemon/caterpie
+      - img "caterpie" [ref=f25e83]
+      - generic [ref=f25e84]: caterpie
+    - link "metapod metapod" [ref=f25e88] [cursor=pointer]:
+      - /url: /pokemon/metapod
+      - img "metapod" [ref=f25e91]
+      - generic [ref=f25e92]: metapod
+    - link "butterfree butterfree" [ref=f25e96] [cursor=pointer]:
+      - /url: /pokemon/butterfree
+      - img "butterfree" [ref=f25e99]
+      - generic [ref=f25e100]: butterfree
+    - link "weedle weedle" [ref=f25e104] [cursor=pointer]:
+      - /url: /pokemon/weedle
+      - img "weedle" [ref=f25e107]
+      - generic [ref=f25e108]: weedle
+    - link "kakuna kakuna" [ref=f25e112] [cursor=pointer]:
+      - /url: /pokemon/kakuna
+      - img "kakuna" [ref=f25e115]
+      - generic [ref=f25e116]: kakuna
+    - link "beedrill beedrill" [ref=f25e120] [cursor=pointer]:
+      - /url: /pokemon/beedrill
+      - img "beedrill" [ref=f25e123]
+      - generic [ref=f25e124]: beedrill
+    - link "pidgey pidgey" [ref=f25e128] [cursor=pointer]:
+      - /url: /pokemon/pidgey
+      - img "pidgey" [ref=f25e131]
+      - generic [ref=f25e132]: pidgey
+    - link "pidgeotto pidgeotto" [ref=f25e136] [cursor=pointer]:
+      - /url: /pokemon/pidgeotto
+      - img "pidgeotto" [ref=f25e139]
+      - generic [ref=f25e140]: pidgeotto
+    - link "pidgeot pidgeot" [ref=f25e144] [cursor=pointer]:
+      - /url: /pokemon/pidgeot
+      - img "pidgeot" [ref=f25e147]
+      - generic [ref=f25e148]: pidgeot
+    - link "rattata rattata" [ref=f25e152] [cursor=pointer]:
+      - /url: /pokemon/rattata
+      - img "rattata" [ref=f25e155]
+      - generic [ref=f25e156]: rattata
+    - link "raticate raticate" [ref=f25e160] [cursor=pointer]:
+      - /url: /pokemon/raticate
+      - img "raticate" [ref=f25e163]
+      - generic [ref=f25e164]: raticate
+    - link "spearow spearow" [ref=f25e168] [cursor=pointer]:
+      - /url: /pokemon/spearow
+      - img "spearow" [ref=f25e171]
+      - generic [ref=f25e172]: spearow
+    - link "fearow fearow" [ref=f25e176] [cursor=pointer]:
+      - /url: /pokemon/fearow
+      - img "fearow" [ref=f25e179]
+      - generic [ref=f25e180]: fearow
+    - link "ekans ekans" [ref=f25e184] [cursor=pointer]:
+      - /url: /pokemon/ekans
+      - img "ekans" [ref=f25e187]
+      - generic [ref=f25e188]: ekans
+    - link "arbok arbok" [ref=f25e192] [cursor=pointer]:
+      - /url: /pokemon/arbok
+      - img "arbok" [ref=f25e195]
+      - generic [ref=f25e196]: arbok
+    - link "pikachu pikachu" [ref=f25e200] [cursor=pointer]:
+      - /url: /pokemon/pikachu
+      - img "pikachu" [ref=f25e203]
+      - generic [ref=f25e204]: pikachu
+    - link "raichu raichu" [ref=f25e208] [cursor=pointer]:
+      - /url: /pokemon/raichu
+      - img "raichu" [ref=f25e211]
+      - generic [ref=f25e212]: raichu
+    - link "sandshrew sandshrew" [ref=f25e216] [cursor=pointer]:
+      - /url: /pokemon/sandshrew
+      - img "sandshrew" [ref=f25e219]
+      - generic [ref=f25e220]: sandshrew
+    - link "sandslash sandslash" [ref=f25e224] [cursor=pointer]:
+      - /url: /pokemon/sandslash
+      - img "sandslash" [ref=f25e227]
+      - generic [ref=f25e228]: sandslash
+    - link "nidoran-f nidoran-f" [ref=f25e232] [cursor=pointer]:
+      - /url: /pokemon/nidoran-f
+      - img "nidoran-f" [ref=f25e235]
+      - generic [ref=f25e236]: nidoran-f
+    - link "nidorina nidorina" [ref=f25e240] [cursor=pointer]:
+      - /url: /pokemon/nidorina
+      - img "nidorina" [ref=f25e243]
+      - generic [ref=f25e244]: nidorina
