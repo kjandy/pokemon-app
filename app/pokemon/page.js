@@ -1,10 +1,14 @@
+// 'use client';
 import { getPokemonList } from '@/lib/pokeapi';
 import { PokemonList } from '@/components/PokemonList';
 import Link from 'next/link';
+// import useCounterStore from '@/store/counterStore';
 
 export const metadata = { title: 'ポケモン一覧 | ポケモン図鑑' };
 
 export default async function PokemonPage() {
+  // export default function PokemonPage() {
+  // const { count } = useCounterStore();
   const pokemons = await getPokemonList(30);
 
   return (
