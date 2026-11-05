@@ -1,22 +1,33 @@
 import Image from 'next/image';
-import { getArtworkUrl, getPokemon } from '@/lib/pokeapi';
-// import { formatNumber } from '@/lib/pokemon-labels';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { Separator } from '@/components/ui/separator';
 import { FavoriteButton } from '@/components/FavoriteButton';
+import TypeBadge from '@/components/TypeBadge';
+import { getArtworkUrl, getPokemon, getPokemonSpecies } from '@/lib/pokeapi';
+import { STAT_LABELS, formatNumber } from '@/lib/pokemon-labels';
 
+// ポケモン詳細ページ（Dynamic Route）
+// /pokemon/pikachu にアクセスすると params.name が "pikachu" になります
 export default async function PokemonDetailPage({ params }) {
-  // console.log('パラムズ', await params);
   const { name } = await params;
-  const pokemon = await getPokemon(name);
-  // 存在しないポケモンなら404(not-found.js)を表示
+
+  // 2つのAPIを同時に取得する（Promise.all）【発展】
+  const [pokemon, species] = await Promise.all([
+    getPokemon(name),
+    getPokemonSpecies(name),
+  ]);
+
+  // 存在しないポケモンなら 404（not-found.js）を表示
   if (!pokemon) {
     notFound();
   }
-  //お気に入りボタンに渡すのは「必要な情報だけ」
+
+  // お気に入りボタンに渡すのは「必要な情報だけ」
   const favoriteData = {
     id: pokemon.id,
     name: pokemon.name,
@@ -34,32 +45,86 @@ export default async function PokemonDetailPage({ params }) {
         <ArrowLeft data-icon="inline-start" />
         一覧にもどる
       </Button>
+
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
-          <CardContent>
-            <div className="grid aspect-square place-items-center rounded-lg bg-muted">
+          <CardContent className="grid place-items-center">
+            <div className="grid aspect-square w-full place-items-center rounded-lg bg-muted">
               <Image
                 src={favoriteData.image}
                 alt={pokemon.name}
                 width={320}
                 height={320}
-                // ファーストビューで最も大きい要素（LCP）なので遅延読み込みせず即座に読み込む
-                loading="eager"
+                priority
               />
             </div>
           </CardContent>
         </Card>
 
-        <div className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            {/* {formatNumber(pokemon.id)} */}
-          </p>
-          <h1 className="text-3xl font-bold capitalize">{pokemon.name}</h1>
-          <p>高さ：{pokemon.height / 10} m</p>
-          <p>重さ：{pokemon.weight / 10} kg</p>
+        <div className="space-y-5">
+          <div className="space-y-1">
+            <p className="text-sm text-muted-foreground">
+              {formatNumber(pokemon.id)}
+            </p>
+            <h1 className="text-3xl font-bold">
+              {species?.japaneseName ?? pokemon.name}
+            </h1>
+            <p className="text-sm capitalize text-muted-foreground">
+              {pokemon.name}
+            </p>
+          </div>
+
+          <div className="flex gap-2">
+            {pokemon.types.map((t) => (
+              <TypeBadge key={t.type.name} type={t.type.name} />
+            ))}
+          </div>
+
+          {species?.flavorText && (
+            <p className="leading-relaxed">{species.flavorText}</p>
+          )}
+
+          <Separator />
+
+          <dl className="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <dt className="text-muted-foreground">高さ</dt>
+              <dd className="text-lg font-semibold">{pokemon.height / 10} m</dd>
+            </div>
+            <div>
+              <dt className="text-muted-foreground">重さ</dt>
+              <dd className="text-lg font-semibold">
+                {pokemon.weight / 10} kg
+              </dd>
+            </div>
+          </dl>
+
           <FavoriteButton pokemon={favoriteData} size="lg" />
         </div>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>種族値</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {pokemon.stats.map((s) => (
+            <div
+              key={s.stat.name}
+              className="grid grid-cols-[5rem_2.5rem_1fr] items-center gap-3 text-sm"
+            >
+              <span className="text-muted-foreground">
+                {STAT_LABELS[s.stat.name] ?? s.stat.name}
+              </span>
+              <span className="text-right font-semibold tabular-nums">
+                {s.base_stat}
+              </span>
+              {/* 種族値の最大はおよそ255なので、その割合でバーを表示 */}
+              <Progress value={Math.round((s.base_stat / 255) * 100)} />
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </main>
   );
 }

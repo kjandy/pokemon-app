@@ -1,7 +1,8 @@
 // 'use client';
 import { getPokemonList } from '@/lib/pokeapi';
-import { PokemonList } from '@/components/PokemonList';
+// import { PokemonList } from '@/components/PokemonList';
 import Link from 'next/link';
+import { PokemonSearch } from '@/components/PokemonSearch';
 // import useCounterStore from '@/store/counterStore';
 
 export const metadata = { title: 'ポケモン一覧 | ポケモン図鑑' };
@@ -20,7 +21,8 @@ export default async function PokemonPage() {
           {pokemons.length}匹のポケモンが見つかりました
         </p>
       </div>
-      <PokemonList pokemons={pokemons} />
+      {/* <PokemonList pokemons={pokemons} /> */}
+      <PokemonSearch pokemons={pokemons} />
     </main>
   );
 }

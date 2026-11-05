@@ -4,7 +4,8 @@ import { usePokemonStore } from '@/store/pokemonStore';
 import { Heart } from 'lucide-react';
 // import { useState } from 'react';
 
-export const FavoriteButton = ({ pokemon }) => {
+// size は省略可能。カード内では小さめの sm、詳細ページでは lg を指定して使う
+export const FavoriteButton = ({ pokemon, size = 'sm' }) => {
   // const [isFavorite, setIsFavorite] = useState(false);
   const isFavorite = usePokemonStore((state) =>
     state.favorites.some((p) => p.id === pokemon.id),
@@ -21,7 +22,7 @@ export const FavoriteButton = ({ pokemon }) => {
   return (
     <Button
       variant={isFavorite ? 'secondary' : 'outline'}
-      size="sm"
+      size={size}
       // onClick={() => setIsFavorite(!isFavorite)}
       onClick={handleClick}
       aria-pressed={isFavorite}

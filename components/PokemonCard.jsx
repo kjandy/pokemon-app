@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { formatNumber } from '@/lib/pokemon-labels';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,7 +26,7 @@ export const PokemonCard = ({ pokemon }) => {
           </div>
         </CardContent>
         <CardHeader className="pt-3">
-          {/* <CardDescription>{formatNumber(pokemon.id)}</CardDescription> */}
+          <CardDescription>{formatNumber(pokemon.id)}</CardDescription>
           <CardTitle className="capitalize">{pokemon.name}</CardTitle>
         </CardHeader>
       </Link>
