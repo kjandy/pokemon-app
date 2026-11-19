@@ -23,7 +23,7 @@ export default async function Home() {
           <h1 className="text-4xl font-bold tracking-tight">
             ポケモン図鑑を
             <br />
-            つくってみよう
+            作ってみよう!
           </h1>
           <p className="text-muted-foreground">
             Server Component でデータを取得し、Client Component と Zustand
